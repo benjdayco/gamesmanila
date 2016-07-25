@@ -1,3 +1,3 @@
 # README
 
-This README is for careerfoundy project.
+This README is for my careerfoundy project.
