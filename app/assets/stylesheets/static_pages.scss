@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+	position:relative;
+}
 h1 {
 	text-align: center;
 	font-family: Futura, Helvetica, Arial, sans-serif;
@@ -12,13 +15,16 @@ h2 {
 	font-family: Futura, Helvetica, Arial, sans-serif;
 	
 }
+.img-responsive {
+    margin: 0 auto;
+}
 
 .float-center {
   float: left;
-
+  display:block;
   position: relative;
-  left: 25%;
   text-align: left;
+  width: 100%;
 }
 
 /**footer section**/
