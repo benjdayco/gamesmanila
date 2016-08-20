@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+#main-body{
+	padding-top: 30px;
+}
