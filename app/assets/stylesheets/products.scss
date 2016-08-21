@@ -2,10 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.thumbnail-image{        
-    width: 100%; // or you could use percentage value for responsive layout
-    height: 250px;
-    overflow: auto;
-    padding-bottom: 20px;
-    
+.thumbnail {
+    position: relative;
+    padding: 5px;
+    margin-bottom: 20px;
+    height: 700px;
 }
+
+.thumbnail img {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 5px;
+}
+
+.thumbnail_image{
+	height: 200px;
+}
+
+	
