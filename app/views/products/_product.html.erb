@@ -1,12 +1,13 @@
 <div class="col-sm-2 col-md-3 product_thumbnails">
   <div class="thumbnail">
     <div class="thumbnail_image">
-        <%= image_tag(product.image_url, class: "img-responsive") %>
+        <%= link_to image_tag(product.image_url, class: "img-responsive"), product_path(product) %>
     </div>
     <div class="caption">
         <hr>
         <p><b><%= product.name %></b></p>
-        <p><%= product.description %></p>
+        <p><%= product.description %>...<b><%= link_to 'More', product_path(product) %></b>
+        </p>
         <p><b>$ <%= product.price %></b> <%= link_to 'Edit', edit_product_path(product) %></p>
     </div>
     </div><!-- /col -->

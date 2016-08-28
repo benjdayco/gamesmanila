@@ -29,10 +29,10 @@
         </div><!--end of navbar header-->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/products">Shop</a></li>
-            <li><a href="/static_pages/about">About</a></li>
-            <li><a href="/static_pages/contact">Contact</a></li>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Products", products_path() %></li>
+            <li><%= link_to "About", static_pages_about_path() %></li>
+            <li><%= link_to "Contact", static_pages_contact_path() %></li>
           </ul>
         </div>
       </div><!--end of nav container-->
