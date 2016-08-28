@@ -28,13 +28,19 @@
           </div> <!--end projectName -->
         </div><!--end of navbar header-->
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-left">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Products", products_path() %></li>
             <li><%= link_to "About", static_pages_about_path() %></li>
             <li><%= link_to "Contact", static_pages_contact_path() %></li>
           </ul>
-        </div>
+          <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %>
+             <div class="form-group">
+              <%= text_field_tag(:q, "",placeholder:"Find a game!", class:"form-control") %>
+            </div>
+            <%= submit_tag("Go",class:"btn btn-default") %>
+            <% end %>
+        </div>   
       </div><!--end of nav container-->
     </nav>
 <!--END OF NAV BAR-->
