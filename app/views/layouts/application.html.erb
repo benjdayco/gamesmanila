@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <p id="notice"><%= notice %></p>
     <nav id="nav-bar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -33,6 +34,13 @@
             <li><%= link_to "Products", products_path() %></li>
             <li><%= link_to "About", static_pages_about_path() %></li>
             <li><%= link_to "Contact", static_pages_contact_path() %></li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              <% else %>
+                <%= link_to('Login', new_user_session_path) %>
+              <% end %>
+            </li>
           </ul>
           <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %>
              <div class="form-group">
