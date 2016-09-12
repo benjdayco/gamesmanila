@@ -10,13 +10,19 @@
   <%= @product.description %>
 </p>
 
-<p>
+<div>
   <%= image_tag(@product.image_url, class: "img-responsive") %>
-</p>
-<p>
-	<strong>Price: </strong>
+</div>
+<div>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </div>
+
+<div>	<strong>Price: </strong>
 	$<%= @product.price %>
-</p>
+</div>
+
+<%= render 'new_comment' %>
+<%= render 'comments' %>
+
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   root 'static_pages#landing_page'
   #root 'products#index'
   resources :orders, only: [:index, :show, :create, :destroy]
-
+  resources :products do
+    resources :comments
+  end
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
