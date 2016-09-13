@@ -1,3 +1,4 @@
+
 <div class="product-reviews">
     <% @comments.each do |comment| %>
         <div class="row">
@@ -7,4 +8,5 @@
             <div><%= comment.body %></div>
         </div>
     <% end %>
+    <%= will_paginate @comments %>
 </div>
