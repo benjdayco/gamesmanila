@@ -1,5 +1,6 @@
 
 <div class="product-reviews">
+		<p class="lead">Customer Reviews</p>
     <% @comments.each do |comment| %>
         <div class="row">
             <hr>
@@ -14,5 +15,8 @@
          
         </div>
     <% end %>
-    <%= will_paginate @comments_pages %>
+    <% if @comments.empty? %>
+     <p>No reviews available.</p>
+    <% end %>
+    <%= will_paginate @comments %>
 </div>
