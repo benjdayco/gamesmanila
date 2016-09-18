@@ -6,22 +6,21 @@
   			<%= image_tag(@product.image_url, class: "img-responsive") %>
   		</div>
 		 	<div class="col-xs-12 col-md-6">
-				<p class="lead">
-  				<%= @product.name %>
- 				</p>
-				<p>
-  				<%= @product.description %>
-				</p>
+				<p class="lead"><%= @product.name %></p>
+			
+				<div class="rating-row">	
+					Average rating (<i><%=@comments.count%> reviews</i>)
+					<div class="rated" data-score="<%= @product.average_rating %>"></div>			
+				</div>
+				<p><%= @product.description %></p>
+				<p><strong>Price: </strong>$<%= @product.price %></p>	
+  								
 			</div>
   </div>
+  <hr>
 <div class="row comments-row">
-<div>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </div>
 
-<div>	<strong>Price: </strong>
-	$<%= @product.price %>
-</div>
 
-<%= render 'new_comment' %>
 <%= render 'comments' %>
 
 
