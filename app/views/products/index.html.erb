@@ -2,7 +2,9 @@
 
 <h1>Products</h1>
 <div id="add-product" class="container-fluid">
- <b><%= link_to 'Add New Product', new_product_path %></b>
+<% if signed_in? && current_user.admin? %>
+ 	<b><%= link_to 'Add New Product', new_product_path %></b>
+<% end %>
 </div>
 <div class="container-fluid">
   <div class="row">
