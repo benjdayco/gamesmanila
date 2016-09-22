@@ -8,9 +8,9 @@ class UserMailer < ApplicationMailer
         :subject => "A new contact form message from #{name}")
   end
 
-  def new_registration(user)
-  	@user = user
-  	message = "Welcome to Games Manila."
-  	mail(:to => @user.email, :subject => "Welcome to Games Manila!!!")
+  def welcome_email(user)
+    @user = user
+    @url ='https://GamesManila.herokuapp.com/signup'
+    mail(to: @user.email, subject: 'Welcome to GamesManila!')
   end
 end
