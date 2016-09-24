@@ -19,16 +19,25 @@ h2 {
     margin: 0 auto;
 }
 
+/* CAROUSEL CONTENT
+-------------------------------------------------- */
+
 .carousel {
   margin-left: -15px;
   margin-right: -15px;
 
 }
 
-
-
 #carousel-container {
 	margin-bottom: 20px;
+}
+
+.carousel-caption {
+  z-index: 10;
+}
+
+.shop-button:visited{
+	color: white;
 }
 
 #carousel-example-generic{
@@ -43,6 +52,29 @@ h2 {
 	height:400px;
 }
 
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.img-marketing{
+	height: 170px;
+}
+
+
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .float-center {
   float: left;
   display:block;
@@ -50,6 +82,9 @@ h2 {
   text-align: left;
   width: 100%;
 }
+
+
+
 
 /**footer section**/
 .social {

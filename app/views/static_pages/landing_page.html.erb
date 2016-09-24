@@ -10,12 +10,14 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <% @products.each do |product| %>
-    <div class="item<%= " active" if product == @products.first %>">
-      <%= image_tag(product.image_url) %>
-      <div class="carousel-caption">
-       <strong><%= product.name %></strong>
-      </div>
+      <div class="item<%= " active" if product == @products.first %>">
+        <%= link_to image_tag(product.image_url), product_path(product) %>
+        <div class="carousel-caption">
+          <h1><%= product.name %></h1>
+              <%= link_to "Shop Now", products_path(), :class=> "btn btn-lg btn-primary shop-button", :role=>"button" %>       
         </div>
+      </div>
+
     <% end %>
   </div>
 
@@ -28,4 +30,22 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+
+<div class="container marketing">
+  <h1>New Arrivals</h1><br>
+   <!-- Three columns of text below the carousel -->
+      <div class="row">
+      <% @thumbnails.each do |thumbnail| %>
+        <div class="col-lg-4 marketing-thumbnails">
+           <%= image_tag(thumbnail.image_url, class:"img-marketing") %>
+          <h2><%= thumbnail.name %></h2>
+          <p><%= thumbnail.description %></p>
+          <p>
+            <%= link_to "View details", product_path(thumbnail), :class=> "btn btn-default", :role=>"button" %>  
+          </p>        
+        </div><!-- /.col-lg-4 -->
+      <% end %>
+        
+      </div><!-- /.row -->
 </div>

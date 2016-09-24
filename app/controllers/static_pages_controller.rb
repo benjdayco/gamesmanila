@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
 
   def landing_page
   	@products = Product.limit(3)
+    @thumbnails = Product.order("created_at DESC")
+    @thumbnails = @thumbnails.limit(3)
   end	
 
   def thank_you
