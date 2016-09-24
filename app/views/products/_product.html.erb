@@ -4,7 +4,7 @@
         <%= link_to image_tag(product.image_url, class: "img-responsive"), product_path(product) %>
     </div>
     
-    </div><!-- /col -->
+   <!-- /col -->
     <div class="caption">
         <p><b><%= link_to product.name, product_path(product) %></b><br>
         <b>$ <%= product.price %></b>
@@ -13,5 +13,6 @@
         <% end %>
         </p>    
     </div>
+     </div>
 
 </div>
