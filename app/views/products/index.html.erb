@@ -3,7 +3,7 @@
 <h1>Products</h1>
 <div id="add-product" class="container-fluid">
 <% if signed_in? && current_user.admin? %>
- 	<b><%= link_to 'Add New Product', new_product_path %></b>
+ 	<b><%= link_to 'Add New Product', new_product_path, :class=> "btn btn-primary button", :role=>"button" %></b>
 <% end %>
 </div>
 <div class="container-fluid">

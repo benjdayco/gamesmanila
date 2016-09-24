@@ -17,4 +17,8 @@
  #main-body{
  	padding-top: 30px;
  }
+
+ .button:visited{
+	color: white;
+}
  

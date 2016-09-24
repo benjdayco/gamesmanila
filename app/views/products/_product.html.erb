@@ -1,4 +1,4 @@
-<div class="col-sm-2 col-md-3">
+<div class="col-xs-12 col-sm-6 col-md-3">
   <div class="thumbnail">
     <div class="thumbnail_image">
         <%= link_to image_tag(product.image_url, class: "img-responsive"), product_path(product) %>
@@ -6,14 +6,12 @@
     
     </div><!-- /col -->
     <div class="caption">
-       
         <p><b><%= link_to product.name, product_path(product) %></b><br>
         <b>$ <%= product.price %></b>
         <% if signed_in? && current_user.admin? %>
-             <%= link_to 'Edit', edit_product_path(product) %>
+             <%= link_to 'Edit', edit_product_path(product),:class=> "btn btn-default", :role=>"button" %>
         <% end %>
-        </p>
-        
+        </p>    
     </div>
 
 </div>
