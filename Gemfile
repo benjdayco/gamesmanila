@@ -71,3 +71,5 @@ gem 'rename'
 gem 'rails-rename', '~> 1.0.0'
 #add pagination to comments
 gem 'will_paginate', '~> 3.1.0'
+
+gem 'rails-controller-testing'
