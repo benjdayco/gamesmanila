@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   get 'static_pages/index'
   post 'static_pages/thank_you'
   root 'static_pages#landing_page'
+  post 'payments/create'
   #root 'products#index'
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :products do
     resources :comments
   end
   resources :users
+
 
   
 
