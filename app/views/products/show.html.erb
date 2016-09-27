@@ -12,7 +12,13 @@
 					<div class="rated" data-score="<%= @product.average_rating %>"></div>			
 				</div>
 				<p><%= @product.description %></p>
-				<p><strong>Price: </strong>$<%= @product.price %></p>	
+				<p><strong>Price: </strong>$<%= @product.price %><p>
+				
+				<%= form_tag "/payments/create" do %>
+  				<%= render partial: "shared/stripe_checkout_button" %>
+				<% end %>	
+
+				
 
 				<div class="review-row"><%= render 'new_comment' %></div>
   								
