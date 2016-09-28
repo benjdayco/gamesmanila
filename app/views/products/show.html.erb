@@ -14,11 +14,12 @@
 				<p><%= @product.description %></p>
 				<p><strong>Price: </strong>$<%= @product.price %><p>
 				
-				<%= form_tag "/payments/create" do %>
-  				<%= render partial: "shared/stripe_checkout_button" %>
-				<% end %>	
-
-				
+				<!--check if user signed in first before they see the checkout button-->
+				<% if signed_in? %>
+					<%= form_tag "/payments/create" do %>
+  					<%= render partial: "shared/stripe_checkout_button" %>
+					<% end %>	
+				<% end %>
 
 				<div class="review-row"><%= render 'new_comment' %></div>
   								
