@@ -1,30 +1,30 @@
 
 
 <div class="container-fluid">
-	<div class="row product-row">
-			<div class="col-xs-12 col-md-6">
-  			<%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image:@product.image_url) %>
-  		</div>
-		 	<div class="col-xs-12 col-md-6">
-				<p class="lead"><%= @product.name %></p>
-				<div class="review-row">	
-					Average rating (<i><%=@comments.count%> reviews</i>)
-					<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>			
+	<% cache @product do %>
+		<div class="row product-row">
+				<div class="col-xs-12 col-md-6">
+	  			<%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image:@product.image_url) %>
+	  		</div>
+			 	<div class="col-xs-12 col-md-6">
+					<p class="lead"><%= @product.name %></p>
+					<div class="review-row">	
+						Average rating (<i><%=@comments.count%> reviews</i>)
+						<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
+					</div>
+					<p><%= @product.description %></p>
+					<p><strong>Price: </strong>$<%= @product.price %><p>
+					
+					<!--check if user signed in first before they see the checkout button-->
+					<% if signed_in? %>
+						<%= form_tag "/payments/create" do %>
+	  					<%= render partial: "shared/stripe_checkout_button" %>
+						<% end %>	
+					<% end %>
+					<div class="review-row"><%= render 'new_comment' %></div>							
 				</div>
-				<p><%= @product.description %></p>
-				<p><strong>Price: </strong>$<%= @product.price %><p>
-				
-				<!--check if user signed in first before they see the checkout button-->
-				<% if signed_in? %>
-					<%= form_tag "/payments/create" do %>
-  					<%= render partial: "shared/stripe_checkout_button" %>
-					<% end %>	
-				<% end %>
-
-				<div class="review-row"><%= render 'new_comment' %></div>
-  								
-			</div>
-  </div>
+	  </div>
+	 <% end %>
 	<div class="row comments-row">
 		<%= render 'comments' %>
 		<% if signed_in? && current_user.admin? %>
