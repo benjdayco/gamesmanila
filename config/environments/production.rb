@@ -89,4 +89,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   # force site to run on SSL
   config.force_ssl = true
+  config.web_socket_server_url = "wss://gamesmanila.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://gamesmanila.herokuapp.com', 'http://gamesmanila.herokuapp.com']
 end

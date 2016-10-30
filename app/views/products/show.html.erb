@@ -26,6 +26,7 @@
 	  </div>
 	 <% end %>
 	<div class="row comments-row">
+		<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 		<%= render 'comments' %>
 		<% if signed_in? && current_user.admin? %>
 			<%= link_to 'Edit', edit_product_path(@product),:class=> "btn btn-default", :role=>"button" %> |
