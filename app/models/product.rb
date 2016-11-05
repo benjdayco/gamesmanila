@@ -8,7 +8,10 @@ class Product < ApplicationRecord
   	comments.rating_asc.first
 	end
 	def average_rating
-  comments.average(:rating).to_f
+  	comments.average(:rating).to_f
+	end
+	def total_comments
+		comments.all.count
 	end
 	validates :name, presence: true
 end
