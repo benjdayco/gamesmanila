@@ -38,8 +38,8 @@
       <div class="row">
       <% @thumbnails.each do |thumbnail| %>
         <div class="col-lg-4 marketing-thumbnails">
-           <%= image_tag(thumbnail.image_url, class:"img-marketing") %>
-          <h2><%= thumbnail.name %></h2>
+           <%= link_to image_tag(thumbnail.image_url, class:"img-marketing"),product_path(thumbnail)  %>
+          <h2><%= link_to thumbnail.name, product_path(thumbnail) %></h2>
           <p><%= thumbnail.description %></p>
           <p>
             <%= link_to "View details", product_path(thumbnail), :class=> "btn btn-default", :role=>"button" %>  
