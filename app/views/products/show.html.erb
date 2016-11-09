@@ -1,38 +1,38 @@
 
 
 <div class="container-fluid">
-	
-		<div class="row product-row" data-product-id="<%= @product.id %>">
-				<div class="col-xs-12 col-md-6">
-	  			<%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image:@product.image_url) %>
-	  		</div>
-			 	<div class="col-xs-12 col-md-6">
-					<p class="lead"><%= @product.name %></p>
-					<div class="review-row">
-						
-						Average rating (<i id="total-comments"><%=@product.total_comments%> reviews</i>)
-						<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
-					</div>
-					<p><%= @product.description %></p>
-					<p><strong>Price: </strong>$<%= @product.price %><p>
-					
-					<!--check if user signed in first before they see the checkout button-->
-					<% if signed_in? %>
-						<%= form_tag "/payments/create" do %>
-	  					<%= render partial: "shared/stripe_checkout_button" %>
-						<% end %>	
-					<% end %>
-					<div class="review-row"><%= render 'new_comment' %></div>							
-				</div>
-	  </div>
-	
-	<div class="row comments-row">
-		<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-		<%= render 'comments' %>
-		<% if signed_in? && current_user.admin? %>
-			<%= link_to 'Edit', edit_product_path(@product),:class=> "btn btn-default", :role=>"button" %> |
-		<% end %>
-		<%= link_to 'Back', products_path,:class=> "btn btn-default", :role=>"button" %>
-	</div>
+  
+  <div class="row product-row" data-product-id="<%= @product.id %>">
+      <div class="col-xs-12 col-md-6">
+      <%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image:@product.image_url) %>
+    </div>
+     <div class="col-xs-12 col-md-6">
+      <p class="lead"><%= @product.name %></p>
+      <div class="review-row">
+        
+        Average rating (<i id="total-comments"><%=@product.total_comments%> reviews</i>)
+        <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
+      </div>
+      <p><%= @product.description %></p>
+      <p><strong>Price: </strong>$<%= @product.price %><p>
+      
+      <!--check if user signed in first before they see the checkout button-->
+      <% if signed_in? %>
+        <%= form_tag "/payments/create" do %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>    
+      <% end %>
+      <div class="review-row"><%= render 'new_comment' %></div>                            
+    </div>
+  </div>
+    
+    <div class="row comments-row">
+      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+      <%= render 'comments' %>
+      <% if signed_in? && current_user.admin? %>
+        <%= link_to 'Edit', edit_product_path(@product),:class=> "btn btn-default", :role=>"button" %> |
+      <% end %>
+      <%= link_to 'Back', products_path,:class=> "btn btn-default", :role=>"button" %>
+  </div>
 </div>
 <hr>

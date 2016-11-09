@@ -26,6 +26,5 @@ describe Ability, :type => :model do
   context "user can add comment" do
     it { should be_able_to(:create, Comment) }
   end
-
  
 end

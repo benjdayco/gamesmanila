@@ -2,7 +2,6 @@ require "rails_helper"
 
 describe User, :type => :model do
 
-
   context "is incomplete user registration" do
 
      it "is incomplete without an email address" do
